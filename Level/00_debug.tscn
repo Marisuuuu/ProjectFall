@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bqxa70t5r6r73"]
+
+[ext_resource type="PackedScene" uid="uid://2041v148sgew" path="res://Model/Character.tscn" id="1_o0yo6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xgwdi"]
+size = Vector2(500, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0yo6"]
+albedo_texture = SubResource("PlaceholderTexture2D_xgwdi")
+uv1_scale = Vector3(25, 25, 25)
+texture_filter = 4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cou4y"]
+lightmap_size_hint = Vector2i(502, 502)
+material = SubResource("StandardMaterial3D_o0yo6")
+add_uv2 = true
+size = Vector2(100, 100)
+subdivide_width = 100
+
+[node name="LevelDebug" type="Node3D" unique_id=1628727976]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2024016421]
+mesh = SubResource("PlaneMesh_cou4y")
+
+[node name="Character" parent="." unique_id=1953909952 instance=ExtResource("1_o0yo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9123263, 0, 0.22806464)
