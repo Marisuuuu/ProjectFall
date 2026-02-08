@@ -1,11 +1,13 @@
 class_name State extends Node
 
-var state_machine : StateMachine
+var state_machine: StateMachine
 # Called when the node enters the scene tree for the first time.
+
+var Entity:CharacterBody3D
+var IHandler:InputHandler
 
 func enter() -> void:
 	pass
-	
 func exit()-> void:
 	pass
 

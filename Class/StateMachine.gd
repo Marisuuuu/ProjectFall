@@ -5,7 +5,11 @@ class_name StateMachine extends Node
 var current_state: State
 var states:Dictionary[String,State] = {}
 
+var IHandler:InputHandler
+
 func _ready() -> void:
+	var parent = get_parent()
+
 	for child in get_children():
 		if child is State:
 			child.state_machine = self
@@ -17,11 +21,11 @@ func _ready() -> void:
 		
 func _process(delta: float) -> void:
 	if current_state:
-		current_state.update(delta)
+		current_state._update(delta)
 		
 func _physics_process(delta: float) -> void:
 	if current_state:
-		current_state.physics_update(delta)
+		current_state._physics_update(delta)
 
 func change_state(new_state_name: String) -> void:
 	var new_state = states.get(new_state_name.to_lower())
