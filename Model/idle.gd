@@ -6,3 +6,6 @@ func enter() -> void:
 	r.Entity(state_machine)
 	
 	Entity = r.object[0]
+	r.Handler(Entity)
+	IHandler = r.object[1]
+	
